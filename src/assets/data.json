@@ -1,0 +1,53 @@
+{
+    "institucion": {
+        "nombre": [
+            "Universidad Iberoamericana Puebla",
+            "Universiidad de Santiago de Compostela",
+            "Universidad Abierta de Cataluña"
+        ],
+        "ciudad": [
+            "Puebla",
+            "Santiago de Compostela",
+            "Barcelona"
+        ],
+        "pais": [
+            "México",
+            "España",
+            "España"
+        ],
+        "estudios": [
+            "Licenciatura en Psicología",
+            "Erasmus Grado en Psicología",
+            "Máster en Dirección y Gestión de RRHH"
+        ],
+        "años": [
+            "2014-2018","2016-2017","2021-2022"
+        ]
+    },
+
+    "empresa": {
+        "nombre": ["Grupo Funerario Cristo Rey", "CEIP Arquitecto Casas Novoa","CERSIA"
+
+        ],
+        "ciudad": ["Puebla","Santiago de Compostela","Santiago de Compostela"
+        ], 
+        "pais": ["México","España","España"
+        ],
+        "años":["2018-2019","2020","2021-2022"
+
+        ],
+        "puesto":["Especialista administrativo","Monitora de comedor","Programa de empleo Santiago Sustentable III"
+        ]
+    },
+
+    "curso": {
+        "nombre": ["Neuromarketing","Mindfulness para o bienestar laboral","Comunicación Persuasiva","Prospección y planificación de ventas con medios digitales","Soporte de tecnologías de la información de Google"
+
+        ],
+        
+        "años":["2020","2020","2021","2021","2021"
+        ]
+    }
+
+
+}
