@@ -1,30 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <the-menu></the-menu>
+  <div>
+    <router-view/>
+  </div>
+  <the-footer></the-footer>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
 
-nav {
-  padding: 30px;
-}
+import TheMenu from "./components/TheMenu";
+import TheFooter from "./components/TheFooter.vue";
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+require("@/assets/scss/_reset.scss");
+require("@/assets/scss/estructure.scss");
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

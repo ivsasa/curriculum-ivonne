@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container1" >
+    <div class="foto">
+      <img alt="Foto" src="../assets/foto.jpg">
+    
+    </div>
+    <div class="ficha-educacion" >
+      <h1>
+        Estudios
+      </h1>
+     
+    </div>
   </div>
+
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script setup >
+require ("@/assets/scss/FichaEducacion.scss")
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
 </script>
+
+<style lang="scss">
+
+.foto{
+    width: 25vw;
+    padding: 40px;
+}
+
+.foto img{
+    object-fit: cover;
+    // display: block;
+    width: 100%;
+}
+
+
+</style>
