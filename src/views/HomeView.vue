@@ -2,7 +2,7 @@
   <div class="encabezado">
 
     <div class="foto">
-      <img alt="Foto" src="http://placekitten.com/600/700">
+      <img alt="Foto" src="../assets/foto.jpg">
 
     </div>
     <div class="descripcion">
@@ -61,11 +61,11 @@
 </template>
 
 <script setup >
-// import { response } from "express";
-import { ref } from "vue";
-let data = ref('hola');
 
-require("@/assets/scss/HomeView.scss")
+import { ref } from "vue";
+let data = ref();
+
+require("@/assets/scss/Views.scss")
 
 const obtenerDatos = async () => {
   let response = await fetch('https://raw.githubusercontent.com/ivsasa/json-curriculum/main/data.json')

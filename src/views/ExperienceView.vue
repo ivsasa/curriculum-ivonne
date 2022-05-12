@@ -24,7 +24,7 @@ let data = ref('hola');
 
 
 
-require("@/assets/scss/ExperienciaLaboral.scss")
+require("@/assets/scss/Views.scss")
 
 const obtenerDatos = async () => {
   let response = await fetch('https://raw.githubusercontent.com/ivsasa/json-curriculum/main/data.json')
