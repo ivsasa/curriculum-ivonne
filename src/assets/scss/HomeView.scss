@@ -1,0 +1,57 @@
+@import '_variables.scss';
+
+.encabezado {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0 20px;
+    margin: 20px;
+
+}
+
+.encabezado .foto {}
+
+
+.foto img {
+
+    display: block;
+    max-width: 300px;
+
+
+
+}
+
+.encabezado .descripcion {
+
+    width: 100%;
+
+}
+
+h1 {
+    background-color: $bg-color-active-1;
+    color: $color-1;
+    margin: 0;
+    font-weight: 500;
+    font-size: larger;
+
+}
+
+.desarrollo {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0 20px;
+    margin: 20px;
+}
+
+.desarrollo .cursos {
+    width: 300px;
+
+
+}
+
+.desarrollo .estudios {}
+
+
+// li{
+//     display: flex;
+//     background-color: aquamarine;
+// }
