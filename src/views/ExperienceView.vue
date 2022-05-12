@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <h1>Experiencia laboral</h1>
-
+    <br>
     <p v-for="valor in data.empresas.id4" :key="valor" value="institucion">
       {{ valor }}
     </p>
-
+    <br>
     <p v-for="valor in data.empresas.id5" :key="valor" value="institucion">
       {{ valor }}
     </p>
-
+    <br>
     <p v-for="valor in data.empresas.id6" :key="valor" value="institucion">
       {{ valor }}
     </p>

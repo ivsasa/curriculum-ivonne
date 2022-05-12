@@ -1,4 +1,9 @@
 {
+    "personal": {
+        "nombre":"Ivonne Sánchez Sánchez",
+        "telefono":"603-351-517",
+        "email":"ivonne9410@hotmail.com"
+    },
     "instituciones": {
         "id1": {
             "nombre": "Universidad Iberoamericana Puebla",
