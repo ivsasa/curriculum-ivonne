@@ -3,27 +3,27 @@
     <h1>Experiencia laboral</h1>
     <br>
     <p>
-      <b>Nombre:</b> {{ data.empresas.id4.nombre }} <br>
-      <b>Ciudad:</b> {{ data.empresas.id4.ciudad }} <br>
-      <b>País:</b> {{ data.empresas.id4.pais }} <br>
-      <b>Años:</b> {{ data.empresas.id4.años }} <br>
-      <b>Puesto:</b> {{ data.empresas.id4.puesto }} <br>
+      <font-awesome-icon icon="signature"></font-awesome-icon> <b>Nombre:</b> {{ data.empresas.id4.nombre }} <br>
+      <font-awesome-icon icon="tree-city"></font-awesome-icon> <b>Ciudad:</b> {{ data.empresas.id4.ciudad }} <br>
+      <font-awesome-icon icon="earth-africa"></font-awesome-icon> <b>País:</b> {{ data.empresas.id4.pais }} <br>
+      <font-awesome-icon icon="calendar-days"></font-awesome-icon><b>Años:</b> {{ data.empresas.id4.años }} <br>
+      <font-awesome-icon icon="briefcase"></font-awesome-icon> <b>Puesto:</b> {{ data.empresas.id4.puesto }} <br>
     </p>
     <br>
     <p>
-      <b>Nombre:</b> {{ data.empresas.id5.nombre }} <br>
-      <b>Ciudad:</b> {{ data.empresas.id5.ciudad }} <br>
-      <b>País:</b> {{ data.empresas.id5.pais }} <br>
-      <b>Años:</b> {{ data.empresas.id5.años }} <br>
-      <b>Puesto:</b> {{ data.empresas.id5.puesto }} <br>
+      <font-awesome-icon icon="signature"></font-awesome-icon> <b>Nombre:</b> {{ data.empresas.id5.nombre }} <br>
+      <font-awesome-icon icon="tree-city"></font-awesome-icon> <b>Ciudad:</b> {{ data.empresas.id5.ciudad }} <br>
+      <font-awesome-icon icon="earth-africa"></font-awesome-icon> <b>País:</b> {{ data.empresas.id5.pais }} <br>
+      <font-awesome-icon icon="calendar-days"></font-awesome-icon><b>Años:</b> {{ data.empresas.id5.años }} <br>
+      <font-awesome-icon icon="briefcase"></font-awesome-icon> <b>Puesto:</b> {{ data.empresas.id5.puesto }} <br>
     </p>
     <br>
     <p>
-      <b>Nombre:</b> {{ data.empresas.id6.nombre }} <br>
-      <b>Ciudad:</b> {{ data.empresas.id6.ciudad }} <br>
-      <b>País:</b> {{ data.empresas.id6.pais }} <br>
-      <b>Años:</b> {{ data.empresas.id6.años }} <br>
-      <b>Puesto:</b> {{ data.empresas.id6.puesto }} <br>
+      <font-awesome-icon icon="signature"></font-awesome-icon> <b>Nombre:</b> {{ data.empresas.id6.nombre }} <br>
+      <font-awesome-icon icon="tree-city"></font-awesome-icon> <b>Ciudad:</b> {{ data.empresas.id6.ciudad }} <br>
+      <font-awesome-icon icon="earth-africa"></font-awesome-icon> <b>País:</b> {{ data.empresas.id6.pais }} <br>
+      <font-awesome-icon icon="calendar-days"></font-awesome-icon><b>Años:</b> {{ data.empresas.id6.años }} <br>
+      <font-awesome-icon icon="briefcase"></font-awesome-icon> <b>Puesto:</b> {{ data.empresas.id6.puesto }} <br>
     </p>
     
   </div>
