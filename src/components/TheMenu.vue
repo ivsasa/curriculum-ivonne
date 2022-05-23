@@ -6,14 +6,14 @@
             
         <font-awesome-icon icon="house" >
 
-        </font-awesome-icon>    
+        </font-awesome-icon> HOME
             
             
         </router-link>
 
         <router-link to="/experience"> 
             
-            <font-awesome-icon :icon="['fa-brands','phoenix-framework']"/>
+            <font-awesome-icon :icon="['fa-brands','phoenix-framework']"/> EXPERIENCIA
             
             
         </router-link>
