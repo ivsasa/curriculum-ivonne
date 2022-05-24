@@ -20,11 +20,6 @@ export const useStoreProfile = defineStore(
 
 
 
-
-
-
-
-
             }
         }
     }

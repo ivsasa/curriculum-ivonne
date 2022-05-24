@@ -43,7 +43,7 @@
 
       </div>
       <div class="estudios">
-        <h1>Estudios</h1>
+        <h1 class="title-estudios" >Estudios</h1>
         <br>
         <p>
 
