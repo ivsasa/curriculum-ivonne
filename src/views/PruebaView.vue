@@ -6,6 +6,7 @@
                 {{ valor.titulo }}
             </li>
         </ul>
+        
 
 
     </div>
@@ -16,8 +17,10 @@
 //Importacion del store de Pinia o variable centralizada de nuesra app
 import { useStoreDatosPersonales } from "../store/datosPersonales";
 
-//Cargar el Store
+//Arrancar el store
 const store = useStoreDatosPersonales();
+
+//Cargar datos
 store.setDatosCurriculum();
 
 

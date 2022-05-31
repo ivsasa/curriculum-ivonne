@@ -3,30 +3,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import {createPinia} from 'pinia'
+import FontAwesomeIcon from "@/hook/fontawesome"
 
-//Para cargar iconos
-import { library } from '@fortawesome/fontawesome-svg-core'; //Devuelve el objeto library
-import { faPhoenixFramework } from '@fortawesome/free-brands-svg-icons';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faSignature } from '@fortawesome/free-solid-svg-icons';
-import { faTreeCity } from '@fortawesome/free-solid-svg-icons';
-import { faEarthAfrica } from '@fortawesome/free-solid-svg-icons';
-import { faSchool } from '@fortawesome/free-solid-svg-icons';
-import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { faMobile } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-
-
-
-library.add(faPhoenixFramework, faHome,faSignature, faTreeCity,faEarthAfrica,faSchool,faCalendarDays,faMobile,faEnvelopeOpen,faBriefcase);
 
 
 
 createApp(App)
-    .component('font-awesome-icon', FontAwesomeIcon)
+    .component('font-awesome-icon', FontAwesomeIcon)//nombre del componente asignado y componente cargado
     .use(createPinia())
     .use(router)
     .mount('#app')

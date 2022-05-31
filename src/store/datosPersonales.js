@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import db from '@/hook/firebase.config';
+import db from '@/firebase';
 import { collection, query, getDocs } from '@firebase/firestore';
 
 
