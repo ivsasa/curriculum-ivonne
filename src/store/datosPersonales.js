@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import db from '@/firebase';
+import { db } from '@/firebase.js';
 import { collection, query, getDocs } from '@firebase/firestore';
 
 
@@ -9,11 +9,11 @@ export const useStoreDatosPersonales = defineStore(
     "datospersonales",
     {
         state: () => {
-            return{
+            return {
                 curriculum: []
 
             }
-            
+
         },
         actions: {
             /**

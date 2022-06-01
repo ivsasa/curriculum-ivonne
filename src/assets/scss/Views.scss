@@ -1,43 +1,36 @@
 @import '_variables.scss';
 
-.contain{
-    margin: 20px 0 0 20px;
-}
+//General
 
-//HomeView
 h1 {
     background-color: $bg-color-active-1;
     border-radius: 3px;
     color: $color-1;
     text-align: center;
-    margin: 0;
     font-weight: 500;
-    font-size: 2vw;
+    margin: 0;
 
 }
 
-p{
+p {
     margin: 0;
     background-color: lavenderblush;
     border-radius: 5px;
-    display: block;
 }
 
+
+
+
+//HomeView
+
+.contain {
+    margin: 20px;
+}
 
 .encabezado {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 20px;
-
-}
-
-.foto img {
-
-    display: block;
-    max-width: 250px;
-    border-radius: 5px;
-
-
+    grid-template-columns: 20% 80%;
+    // gap: 20px;
 
 }
 
@@ -45,44 +38,34 @@ p{
 
     width: 100%;
 
-    .contein-datos {
-        display: flex;
-        flex-direction: column;
-        margin: 25 px auto;
-        padding: 25px 0 25px 0;
-        background-color: lavenderblush;
-        border-radius: 5px;
-    }
-
-    li {
-        display: flex;
-        text-align: start;
-        width: max-content;
-        height: 3vw;
-    }
 
 }
+
+.foto img {
+
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+
 
 .desarrollo {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 20px;
-    
-}
-
-.desarrollo .cursos {
-    width: 250px;
-    
-
-
-}
-.desarrollo .cursos .title-estudios {
-    display: block;
-
+    grid-template-columns: 20% 40% 40%;
+    // gap: 20px;
 
 }
 
-//Experienc View
+//Inicio View
 .container{
+    margin: 20px;
+}
+
+
+//Login View
+
+.sing-in {
     margin: 20px;
 }

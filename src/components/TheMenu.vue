@@ -1,17 +1,25 @@
 <template>
 
     <nav class="main-menu">
-        <router-link to="/">
+       
+
+        <router-link to="/inicio">
+
+            <font-awesome-icon :icon="['fa-brands', 'phoenix-framework']" /> INICIO
+
+        </router-link>
+         <router-link to="/cv">
 
             <font-awesome-icon icon="house">
 
-            </font-awesome-icon> HOME
+            </font-awesome-icon> CURRICULUM
 
         </router-link>
+        <router-link to="/login">
 
-        <router-link to="/experience">
+           <font-awesome-icon icon="arrow-right-from-bracket">
 
-            <font-awesome-icon :icon="['fa-brands', 'phoenix-framework']" /> EXPERIENCIA
+            </font-awesome-icon> LOG IN
 
         </router-link>
 
