@@ -1,15 +1,18 @@
 @import '_variables.scss' ;
 
-li{
+.li-footer{
     list-style:none ;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    
     
 }
 
 .main-footer{
     display: flex;
     flex-direction: row;
-    height: max-content;
+    
 }
 .menu-footer{
     background-color: $bg-color-1;
@@ -17,7 +20,25 @@ li{
     display: flex;
     flex-direction:row ;
     width: 100%;
-    justify-content: space-around;
     text-align: center;
+    justify-content: space-around;
+    
 }
 
+.svg-footer{
+    margin-bottom:10px ;
+}
+
+@media (max-width: 600px) {
+    .menu-footer {
+        display: block;
+
+        a {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+            text-align: center;
+        }
+
+    }
+}

@@ -8,13 +8,14 @@ h1 {
     color: $color-1;
     text-align: center;
     font-weight: 500;
-    margin: 0;
+    
+    
 
 }
 
 p {
     margin: 0;
-    background-color: lavenderblush;
+    background-color: $bg-color-2;
     border-radius: 5px;
 }
 
@@ -29,14 +30,19 @@ p {
 
 .encabezado {
     display: grid;
-    grid-template-columns: 20% 80%;
-    // gap: 20px;
+    grid-template-columns: 20% 1fr;
+    gap: 20px;
 
+}
+
+.title-descripcion{
+    margin-top: 0;
 }
 
 .encabezado .descripcion {
 
     width: 100%;
+    margin-right: 40px;
 
 
 }
@@ -53,10 +59,29 @@ p {
 
 .desarrollo {
     display: grid;
-    grid-template-columns: 20% 40% 40%;
-    // gap: 20px;
+    grid-template-columns: 20% 1fr 1fr;
+    gap: 20px;
 
 }
+
+
+@media (max-width:600px){
+
+    .encabezado{
+        display: block;
+
+    }
+    .title-descripcion{
+        margin-top: 20px;
+    }
+
+
+    .desarrollo{
+        display: block;
+    }
+}
+
+
 
 //Inicio View
 .container{

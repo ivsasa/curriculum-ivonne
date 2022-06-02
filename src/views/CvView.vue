@@ -15,7 +15,7 @@
     <div class="desarrollo">
       <div class="cursos">
         <h1>Cursos</h1>
-        <br>
+        
         <p>
           <font-awesome-icon icon="signature"></font-awesome-icon> <b>Nombre:</b> {{ data.cursos.id7.nombre }} <br>
           <font-awesome-icon icon="calendar-days"></font-awesome-icon> <b>Años:</b> {{ data.cursos.id7.años }}
@@ -44,7 +44,7 @@
       </div>
       <div class="estudios">
         <h1 class="title-estudios" >Estudios</h1>
-        <br>
+        
         <p>
 
           <font-awesome-icon icon="signature"></font-awesome-icon> <b>Nombre:</b> {{ data.instituciones.id1.nombre }} <br>
@@ -87,7 +87,7 @@
       </div>
     <div>
     <h1>Experiencia laboral</h1>
-    <br>
+    
     <p>
       <font-awesome-icon icon="signature"></font-awesome-icon> <b>Nombre:</b> {{ data.empresas.id4.nombre }} <br>
       <font-awesome-icon icon="tree-city"></font-awesome-icon> <b>Ciudad:</b> {{ data.empresas.id4.ciudad }} <br>

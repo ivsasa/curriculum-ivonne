@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { db } from '@/firebase.js';
-import { doc, getDoc } from "firebase/firestore";
+import { collection, query, doc, getDoc, getDocs } from "firebase/firestore";
 
 // useStore could be anything like useUser, useCart
 // the first argument is a unique id of the store across your application
@@ -22,6 +22,9 @@ export const useStorePerfil = defineStore('idPerfil', {
                 fechaNacimiento: null
             },
 
+            curriculum:[]
+
+
 
         }
     },
@@ -41,7 +44,19 @@ export const useStorePerfil = defineStore('idPerfil', {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
             }
+        },
+        async setDatosCurriculum() {
+            this.curriculum = [];
+            const curriculumRef = collection(db, 'curriculum');
+            const consulta = query(curriculumRef);
+            const resultadoConsulta = await getDocs(consulta);
+            resultadoConsulta.forEach(
+                (fila) => {
+                    this.curriculum.push(fila.data());
+                }
+            );
         }
+
     },
     getters: {
         getNombreCompleto(state) {

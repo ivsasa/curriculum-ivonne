@@ -12,10 +12,14 @@ import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {faArrowRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {faMobileButton} from '@fortawesome/free-solid-svg-icons';
+import {faLocationDot} from '@fortawesome/free-solid-svg-icons';
 
 
 
 
-library.add(faPhoenixFramework, faHome,faSignature, faTreeCity,faEarthAfrica,faSchool,faCalendarDays,faMobile,faEnvelopeOpen,faBriefcase, faArrowRightFromBracket);
+
+library.add(faPhoenixFramework, faHome,faSignature, faTreeCity,faEarthAfrica,faSchool,faCalendarDays,faMobile,faEnvelopeOpen,faBriefcase, faArrowRightFromBracket,faEnvelope,faMobileButton,faLocationDot);
 
 export default FontAwesomeIcon;

@@ -24,18 +24,12 @@ const routes = [
       return import('../views/LoginView.vue')
     }
   },
+  
   {
-    path: '/prueba',
-    name: 'prueba',
+    path: '/cvfirebase',
+    name: 'cvfirebase',
     component: function () {
-      return import ('../views/PruebaView.vue')
-    }
-  },
-  {
-    path: '/prueba2',
-    name: 'prueba2',
-    component: function () {
-      return import ('../views/Prueba2View.vue')
+      return import ('../views/CurrFireBase.vue')
     }
   }
 ]
