@@ -20,10 +20,17 @@
                     <input v-model="form.password" type="password" id="password" required>
                 </div>
                 <br>
-                <button>Login</button>
+                <button :disabled="store.user===null?false:true"> Login </button>
 
-                <input @click="desconectar" type="button" value="Logout">
-
+                <input @click="desconectar" type="button" value="Logout"><strong>{{store.errores}}</strong>
+                
+                <div 
+                    v-if="validacionError"
+                    class="error" 
+                    style="background-color: #128a92; color:white">
+                    Error:{{validacionError}}
+                </div>
+                
 
             </form>
         </fieldset>
@@ -35,7 +42,7 @@
 <script setup>
 //Libraries
 import { useStoreUsers } from '@/store/users';
-import {reactive} from 'vue';
+import {reactive, ref} from 'vue';
 
 //Inicializar store Pinia
 const store = useStoreUsers();
@@ -48,9 +55,21 @@ const form = reactive (
     }
 );
 
+const disabled = ref (false);
 
-const autentificar = () => {
-    store.signIn(form);
+const validacionError = ref(false);
+
+
+const autentificar = async () => {
+    try{
+        validacionError.value = false;
+        await store.signIn(form);
+        disabled.value = false;
+    } catch(error){
+        validacionError.value = error.message;
+        console.log("Mi error", error);
+    }
+    
 }
 
 const desconectar = () => {

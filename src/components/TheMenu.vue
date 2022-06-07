@@ -15,6 +15,13 @@
             </font-awesome-icon> CURRICULUM
 
         </router-link>
+        <router-link to="/cvfirebase">
+
+            <font-awesome-icon icon="house" class="svg-footer">
+
+            </font-awesome-icon> CV FIREBASE
+
+        </router-link>
         <router-link to="/login">
 
             <font-awesome-icon icon="arrow-right-from-bracket" class="svg-footer">
@@ -22,6 +29,7 @@
             </font-awesome-icon> LOG IN
 
         </router-link>
+
 
     </nav>
 

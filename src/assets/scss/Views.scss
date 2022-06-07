@@ -8,13 +8,15 @@ h1 {
     color: $color-1;
     text-align: center;
     font-weight: 500;
+    margin: 0 0 10px 0;
     
     
 
 }
 
 p {
-    margin: 0;
+    margin: 0 0 3px 0;
+    padding: 5px;
     background-color: $bg-color-2;
     border-radius: 5px;
 }
@@ -30,28 +32,17 @@ p {
 
 .encabezado {
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 15% 1fr 1fr;
     gap: 20px;
 
 }
 
-.title-descripcion{
-    margin-top: 0;
-}
-
-.encabezado .descripcion {
-
-    width: 100%;
-    margin-right: 40px;
-
-
-}
 
 .foto img {
 
-    display: block;
     width: 100%;
     border-radius: 5px;
+    border-radius: 50%;
 
 }
 
@@ -59,13 +50,24 @@ p {
 
 .desarrollo {
     display: grid;
-    grid-template-columns: 20% 1fr 1fr;
+    grid-template-columns: 15% 1fr 1fr;
     gap: 20px;
 
 }
 
 
-@media (max-width:600px){
+@media (max-width:800px){
+
+    .foto{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .foto img { 
+        width:100%;
+        border-radius: 5px;
+        border-radius: 50%;
+    
+    }
 
     .encabezado{
         display: block;
