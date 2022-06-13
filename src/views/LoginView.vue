@@ -2,35 +2,35 @@
 
     <div class="sing-in">
         <h1>Página de Acceso</h1>
-        {{store.getEmailUser}}
+        {{ store.getEmailUser }}
 
         <fieldset>
-            <form @submit.prevent="autentificar" action="#" id="myForm">
-                <div class="control">
-                    <label for="email">
-                        Correo electronico:
-                    </label>
-                    <input v-model="form.email" type="email" id="email" required>
-                </div>
-                <br>
-                <div class="control">
-                    <label for="password">
-                        Contraseña:
-                    </label>
-                    <input v-model="form.password" type="password" id="password" required>
-                </div>
-                <br>
-                <button :disabled="store.user===null?false:true"> Login </button>
+            <form class="myForm" id="signIn" @submit.prevent="signIn" action="#">
+                <ul class="field">
+                    <li class="field">
+                        <div class="control">
+                            <label for="email">Correo electronico:</label>
+                            <input v-model="form.email" type="email" id="email" required>
+                        </div>
+                    </li>
+                    <br>
+                    <li class="field">
+                        <div class="control">
+                            <label for="password">Contraseña:</label>
+                            <input v-model="form.password" type="password" id="password" required>
+                        </div>
+                    </li>
+                </ul>
 
-                <input @click="desconectar" type="button" value="Logout"><strong>{{store.errores}}</strong>
-                
-                <div 
-                    v-if="validacionError"
-                    class="error" 
-                    style="background-color: #128a92; color:white">
-                    Error:{{validacionError}}
+
+                <button :disabled="store.user === null ? false : true"> Login </button>
+
+                <input @click="desconectar" type="button" value="Logout"><strong>{{ store.errores }}</strong>
+
+                <div v-if="validacionError" class="error" style="background-color: #128a92; color:white">
+                    Error:{{ validacionError }}
                 </div>
-                
+
 
             </form>
         </fieldset>
@@ -42,39 +42,39 @@
 <script setup>
 //Libraries
 import { useStoreUsers } from '@/store/users';
-import {reactive, ref} from 'vue';
+import { reactive, ref } from 'vue';
 
 //Inicializar store Pinia
 const store = useStoreUsers();
 
 
-const form = reactive (
+const form = reactive(
     {
         email: 'ivonne9410@hotmail.com',
         password: '000000000'
     }
 );
 
-const disabled = ref (false);
+const disabled = ref(false);
 
 const validacionError = ref(false);
 
 
 const autentificar = async () => {
-    try{
+    try {
         validacionError.value = false;
         await store.signIn(form);
         disabled.value = false;
-    } catch(error){
+    } catch (error) {
         validacionError.value = error.message;
         console.log("Mi error", error);
     }
-    
+
 }
 
 const desconectar = () => {
     store.logout();
-    
+
 }
 
 </script>
