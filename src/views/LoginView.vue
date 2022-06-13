@@ -60,7 +60,7 @@ const disabled = ref(false);
 const validacionError = ref(false);
 
 
-const autentificar = async () => {
+const signIn = async () => {
     try {
         validacionError.value = false;
         await store.signIn(form);
@@ -73,7 +73,7 @@ const autentificar = async () => {
 }
 
 const desconectar = () => {
-    store.logout();
+    store.loginOut();
 
 }
 

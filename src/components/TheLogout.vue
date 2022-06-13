@@ -1,8 +1,9 @@
 <template>
 <div class="footer2">
     <p>
-        <strong>Ivsasa</strong> <br> 
+        <strong>Ivsasa</strong> <a href="">Ivsasa</a> <br> 
     </p>
+    {{email}}
 </div>
 
 </template>

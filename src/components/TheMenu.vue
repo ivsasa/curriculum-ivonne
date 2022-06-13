@@ -1,9 +1,11 @@
 <template>
 
-    <nav class="main-menu">
+    <nav 
+    class="main-menu"
+    :class = "[isLogged]">
 
 
-        <router-link to="/inicio">
+        <router-link to="/">
 
             <font-awesome-icon :icon="['fa-brands', 'phoenix-framework']" class="svg-footer" /> INICIO
 

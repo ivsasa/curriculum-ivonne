@@ -1,6 +1,7 @@
 <template>
-<header class="main-header">
-    <h1>Ivsasa</h1>
+<header >
+   Ivsasa
+    <!-- {{correo}}{{logged}} -->
 </header>
 
 
@@ -9,25 +10,24 @@
 </template>
 
 <script setup >
-    defineProps(
-        {
-            correo: {
-                type: string,
-                default: " "
-            },
-            logged: {
-                type:boolean,
-                default:false
-            }          
+    // defineProps(
+    //     {
+    //         correo: {
+    //             type: string,
+    //             default: " "
+    //         },
+    //         logged: {
+    //             type:boolean,
+    //             default:false
+    //         }          
 
-        }
-    )
+    //     }
+    // )
 
 </script>
 
-<style scoped >
-h1{
-    text-align: start;
-    margin:0;
+<style>
+header{
+    display: block;
 }
 </style>

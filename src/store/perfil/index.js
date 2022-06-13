@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia';
 import { db } from '@/firebase.js';
 import { collection, query, doc, getDoc, getDocs } from "firebase/firestore";
+import { storage } from '@/firebase.js';
+import { ref, uploadBytes } from "firebase/storage";
 
 // useStore could be anything like useUser, useCart
 // the first argument is a unique id of the store across your application
@@ -22,9 +24,8 @@ export const useStorePerfil = defineStore('idPerfil', {
                 fechaNacimiento: null
             },
 
-            curriculum:[]
-
-
+            curriculum: [],
+            miFoto: null
 
         }
     },
@@ -33,7 +34,14 @@ export const useStorePerfil = defineStore('idPerfil', {
          * @description Leer datos de la coleccion firestore datospersonales y guardarlo en la propiedad datosPersonales
          */
 
-
+        subirFoto(file) {
+            const ruta = `carpeta/${file.name}`;
+            const storageRef = ref(storage, ruta);
+            // 'file' comes from the Blob or File API
+            uploadBytes(storageRef, file).then((snapshot) => {
+                console.log('Uploaded a blob or file!');
+            }).catch(error=>console.log(error));
+        },
         async setDatosPersonales() {
             const docRef = doc(db, "datospersonales", "dp-1");
             const docCaputura = await getDoc(docRef);

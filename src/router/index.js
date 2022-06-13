@@ -7,14 +7,19 @@ const routes = [
     component: function (){
       return import ('../views/CvView.vue')
 
+    },meta: {
+      title:"CV"
     }
     
   },
   {
-    path: '/inicio',
+    path: '/',
     name: 'inicio',
     component: function () {
       return import('../views/InicioView.vue')
+    },
+    meta: {
+      title:"Inicio"
     }
   },
   {
@@ -22,6 +27,8 @@ const routes = [
     name: 'login',
     component: function () {
       return import('../views/LoginView.vue')
+    },meta: {
+      title:"Login"
     }
   },
   
@@ -31,6 +38,7 @@ const routes = [
     component: function () {
       return import ('../views/CurrFireBase.vue')
     }
+    
   }
 ]
 
@@ -38,5 +46,12 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+
+
+router.beforeEach((to,from,next) =>{
+  window.document.title =to.meta.title?to.meta.title:'Ivsasa`s page';
+  next();
+});
 
 export default router
