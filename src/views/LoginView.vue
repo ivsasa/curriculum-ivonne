@@ -5,7 +5,7 @@
         {{ store.getEmailUser }}
 
         <fieldset>
-            <form class="myForm" id="signIn" @submit.prevent="signIn" action="#">
+            <form class="myForm" id="signIn" @submit.prevent="autentificar" action="#">
                 <ul class="field">
                     <li class="field">
                         <div class="control">
@@ -44,6 +44,8 @@
 import { useStoreUsers } from '@/store/users';
 import { reactive, ref } from 'vue';
 
+
+const src = ref("");
 //Inicializar store Pinia
 const store = useStoreUsers();
 
@@ -60,7 +62,7 @@ const disabled = ref(false);
 const validacionError = ref(false);
 
 
-const signIn = async () => {
+const autentificar = async () => {
     try {
         validacionError.value = false;
         await store.signIn(form);
@@ -73,7 +75,7 @@ const signIn = async () => {
 }
 
 const desconectar = () => {
-    store.loginOut();
+    store.logout();
 
 }
 

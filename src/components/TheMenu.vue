@@ -1,8 +1,7 @@
 <template>
 
     <nav 
-    class="main-menu"
-    :class = "[isLogged]">
+    class="main-menu">
 
 
         <router-link to="/">
@@ -28,7 +27,7 @@
 
             <font-awesome-icon icon="arrow-right-from-bracket" class="svg-footer">
 
-            </font-awesome-icon> LOG IN
+            </font-awesome-icon> LOG IN <br>{{correo}}
 
         </router-link>
 
@@ -39,7 +38,16 @@
 </template>
 
 <script setup>
-
+defineProps({
+        correo:{
+            type: String,
+            default: ''
+        },
+        logged:{
+            type: Boolean,
+            default: false
+        }
+    });
 
 
 require("@/assets/scss/TheMenu.scss")

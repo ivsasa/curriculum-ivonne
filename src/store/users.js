@@ -10,7 +10,7 @@ export const useStoreUsers = defineStore({
     state: () => {
         return {
             user: null,
-            isLogged: false
+            
         }
     },
     actions: {
@@ -20,10 +20,15 @@ export const useStoreUsers = defineStore({
             this.user = userCredential.user;
             this.isLogged = true;
         },
-        async loginOut() {
-            await signOut(auth);
-            this.user = null;
-            this.isLogged = false;
+        logout() {
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                this.user = null;
+            }).catch((error) => {
+                // An error happened.
+                console.log(error);
+            });
+
         },
 
         logged() {
@@ -53,7 +58,7 @@ export const useStoreUsers = defineStore({
             if (state.user && state.user.email)
                 return state.user.email
             else
-                return "No hay usuario";
+                return "";
         }
     },
 

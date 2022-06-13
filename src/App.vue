@@ -1,17 +1,14 @@
 <script setup>
-
+import { RouterLink, RouterView } from 'vue-router'
 import TheMenu from "./components/TheMenu";
 import TheFooter from "./components/TheFooter";
-// import TheLogout from "./components/TheLogout";
 import {useStoreUsers} from "./store/users"
-import {provide} from 'vue';
 
 require("@/assets/scss/_reset.scss");
 require("@/assets/scss/estructure.scss");
 
-const store =useStoreUsers();
-store.logged();
-provide('store',store);
+const almacen =useStoreUsers();
+almacen.logged();
 
 
 </script>
@@ -19,12 +16,14 @@ provide('store',store);
 
 
 <template>
-
-  <the-menu></the-menu>
+  <the-menu
+  :correo="almacen.getEmailUser" 
+    :logged="almacen.user?true:false">
+    </the-menu>
   <div>
     <router-view/>
   </div>
  <the-footer></the-footer>
- <!-- <the-logout></the-logout> -->
+ 
 </template>
 
