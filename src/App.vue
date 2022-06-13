@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import {RouterView } from 'vue-router'
 import TheMenu from "./components/TheMenu";
 import TheFooter from "./components/TheFooter";
 import {useStoreUsers} from "./store/users"
@@ -18,7 +18,7 @@ almacen.logged();
 <template>
   <the-menu
   :correo="almacen.getEmailUser" 
-    :logged="almacen.user?true:false">
+  :logged="almacen.user?true:false">
     </the-menu>
   <div>
     <router-view/>
