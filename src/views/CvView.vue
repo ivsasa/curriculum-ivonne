@@ -212,11 +212,6 @@
 
 <script setup >
 
-// //Usando Pinia
-// import {useStoreProfile} from "@/store/profile";
-// const store = useStoreProfile();
-
-// store.cargarData()
 
 
 
@@ -224,6 +219,7 @@ import { ref } from "vue";
 let data = ref();
 let loading = ref(false);
 
+//Cargar el SCSS
 require("@/assets/scss/Views.scss")
 
 const obtenerDatos = async () => {

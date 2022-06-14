@@ -33,7 +33,7 @@ import { getURL, listAllUrls } from '@/firebase.cloud.storage';
 import { ref } from 'vue';
 
 
-
+//Componente para cargar foto ya subida
 
 const url = ref("");
 
@@ -42,6 +42,9 @@ const cargarFoto = async () => {
 }
 
 cargarFoto();
+
+
+//Utilizar componente para subir foto
 // Utilizar componente examinar
 const store = useStorePerfil();
 const error = ref('');
@@ -58,7 +61,7 @@ const gestionarFichero = async (imagen) => {
 
 }
 const cargarFotos = async () =>{
-  rutas.value = await listAllUrls('carpeta');
+  rutas.value = await listAllUrls('inicio');
 }
 cargarFotos();
 

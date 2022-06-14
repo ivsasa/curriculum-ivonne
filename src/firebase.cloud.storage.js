@@ -2,7 +2,7 @@ import { storage } from './firebase';
 import { ref, getDownloadURL, uploadBytes, listAll } from "@firebase/storage";
 
 
-export const getURL = async (ruta = 'imagenes/marsupial.jpg') => {
+export const getURL = async (ruta = 'big-data.jpg') => {
     const pathReference = ref(storage, ruta);
     const url = await getDownloadURL(pathReference);
     return url;

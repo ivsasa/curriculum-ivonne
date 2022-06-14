@@ -1,37 +1,62 @@
 <template>
   <div class="contain-fb">
-    <div class="about">
-      <h1>Datos Personales</h1>
-
-      <div class="campo">
-        <strong>
-          Nombre:
-        </strong>
-        {{ store.getNombreCompleto }}
+    <div class="header">
+      <div>
+        foto
       </div>
-      <br>
-      <div class="campo">
-        <strong>
-          Fecha de Nacimiento:
-        </strong>
-        {{ store.getDiaMesAnho }}
+      <div class="about">
+        <h1>Datos Personales</h1>
+        <div class="campo">
+          <strong>
+            Nombre:
+          </strong>
+          {{ store.getNombreCompleto }}
+        </div>
+        <br>
+        <div class="campo">
+          <strong>
+            Fecha de Nacimiento:
+          </strong>
+          {{ store.getDiaMesAnho }}
+        </div>
+
       </div>
 
     </div>
-    <br>
-    <div class="cv">
-      <h1>Curriculum Vitae Prueba</h1>
-      <div class="campo">
+
+    <div class="cfb-main">
+      <div class="cfb-ficha">
+        <h1>Cursos</h1>
+        <div class="campo">
+          <ul>
+            <li v-for="(valor, index) in store.cursos" :key="index">
+              {{ valor.nombre }} {{ valor.periodo }}
+            </li>
+          </ul>
+          <strong>
+          </strong>
+        </div>
+      </div>
+      <div class="cfbficha">
+        <h1>Educación</h1>
         <ul>
-          <li v-for="(valor, index) in store.curriculum" :key="index">
-            {{ valor.titulo }}
+          <li v-for="(valor, index) in store.instituciones" :key="index">
+            <span>{{ valor.nombre }}</span>
+            <span>{{ valor.periodo }}</span>
           </li>
         </ul>
-        <strong>
-        </strong>
+      </div>
+      <div class="cfb-ficha">
+        <h1>Experiencia laboral</h1>
+        <ul>
+          <li v-for="(valor, index) in store.empresas" :key="index">
+            {{ valor.nombre }} {{ valor.periodo }}
+          </li>
+        </ul>
       </div>
     </div>
-    <img v-if="src.length>0" class="img_1" :src="src" alt="No hay foto">
+
+    <img v-if="src.length > 0" class="img_1" :src="src" alt="No hay foto">
     <input type="button" @click="cargarFoto" value="Cargar Foto">
   </div>
 
@@ -45,17 +70,26 @@ import { getURL } from '@/firebase.cloud.storage';
 import { ref } from 'vue';
 import { useStorePerfil } from '@/store/perfil';
 
-
-const src = ref("");
 //Arrancamos store
 const store = useStorePerfil();
+
+
+
+//Cargar datos personales
+
+store.setDatosPersonales();
+
+//Cargar datos curriculares
+store.setDatosCurricular();
+
+//Funcion para cargar foto con un boton
+const src = ref("");
+
 const cargarFoto = async () => {
-  src.value = await getURL('imagenes/Detalle_1.jpg');
+  src.value = await getURL('big-data.jpg');
 }
 
-//Cargar datos
-store.setDatosPersonales();
-store.setDatosCurriculum();
+//Cargar SCSS
 require("@/assets/scss/Views.scss")
 
 
@@ -83,4 +117,13 @@ li {
   width: 300px;
 
 }
+
+.cfb-main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* .cfb-ficha{
+  display: flex;
+} */
 </style>

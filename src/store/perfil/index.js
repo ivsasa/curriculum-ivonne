@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { db } from '@/firebase.js';
+import { getDocuments } from '@/hook/firestore';
 import { collection, query, doc, getDoc, getDocs } from "firebase/firestore";
 import { subirFicheros } from '@/firebase.cloud.storage';
 
@@ -25,6 +26,9 @@ export const useStorePerfil = defineStore('idPerfil', {
             },
 
             curriculum: [],
+            cursos: [],
+            empresas: [],
+            instituciones:[],
             miFoto: null
 
         }
@@ -48,16 +52,13 @@ export const useStorePerfil = defineStore('idPerfil', {
                 console.log("No such document!");
             }
         },
-        async setDatosCurriculum() {
-            this.curriculum = [];
-            const curriculumRef = collection(db, 'curriculum');
-            const consulta = query(curriculumRef);
-            const resultadoConsulta = await getDocs(consulta);
-            resultadoConsulta.forEach(
-                (fila) => {
-                    this.curriculum.push(fila.data());
-                }
-            );
+        async setDatosCurricular() {
+            if(this.cursos.length<1){
+                this.cursos = await getDocuments('cursos');
+                this.empresas = await getDocuments('empresas');
+                this.instituciones = await getDocuments('instituciones')
+            }
+
         }
 
     },
@@ -72,7 +73,6 @@ export const useStorePerfil = defineStore('idPerfil', {
             }
             const date = new Date(state.datosPersonales.fechaNacimiento.toDate());
             return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-
         }
     }
 });
