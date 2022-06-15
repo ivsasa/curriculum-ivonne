@@ -18,7 +18,7 @@ export const useStoreUsers = defineStore({
         async signIn({ email, password }) {
             const userCredential = await signInWithEmailAndPassword(auth, email, password)
             this.user = userCredential.user;
-            this.isLogged = true;
+            
         },
         logout() {
             signOut(auth).then(() => {
@@ -44,9 +44,12 @@ export const useStoreUsers = defineStore({
                 } else {
                     // User is signed out
                     // ...
-                    
+                    this.user=null
                 }
-            });
+            })
+            // .catch((error) =>{
+            //     console.log(error)
+            // });
         }
         
 

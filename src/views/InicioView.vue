@@ -1,26 +1,19 @@
 <template>
   <!-- Imagen  que aparece al iniciar la pagina del storage -->
 
-  <div class="container">
-    <h1>Página de inicio</h1>
-    <img :src="url" alt="No hay imagen">
-
-
+  <div class="encabezado-inicio" >
+    <img :src="url" alt="No hay imagen" class="img-encabezado">
   </div>
 
-  <!-- Utilizar componente examinar -->
+  <div class="inicio-gallery" >
+    <h1>Acerca de</h1>
 
-  <div>
-    <h1 class="container">Cargar imagen</h1>
-    <TheUploader @emitirFichero="gestionarFichero"></TheUploader> <br>
-
-    <strong>{{error}}</strong>
-    <img 
-    
-    v-for="(ruta,index) in rutas" :key="index" 
-    :src="ruta" alt="">
+    <strong>{{ error }}</strong>
+   
+      <img class="gallery" v-for="(ruta, index) in rutas" :key="index" :src="ruta" alt="">
+      
   </div>
-
+  <TheUploader @emitirFichero="gestionarFichero"></TheUploader>
 </template>
 
 
@@ -60,15 +53,40 @@ const gestionarFichero = async (imagen) => {
   //console.log(typeof imagen);
 
 }
-const cargarFotos = async () =>{
+const cargarFotos = async () => {
   rutas.value = await listAllUrls('inicio');
+  rutas.value.forEach(element => console.log (element))
+  
 }
+
 cargarFotos();
 
 </script>
 
 <style scoped >
-img {
+
+/* Encabezado de la pagina de inicio*/
+
+.encabezado-inicio{
+  display: flex;
+  
+  
+  
+}
+.img-encabezado{
+  display: block;
+  margin: auto;
+  
+}
+
+
+
+/* Galeria de post de la pagina de inicio */
+.inicio-gallery{
+  margin:auto;
+}
+.gallery {
+  
   width: 300px;
   height: 300px;
   object-fit: cover;

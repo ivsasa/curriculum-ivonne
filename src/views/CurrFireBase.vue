@@ -1,6 +1,8 @@
 <template>
   <div class="contain-fb">
     <div class="header">
+      
+    
       <div>
         foto
       </div>
@@ -55,6 +57,9 @@
         </ul>
       </div>
     </div>
+    <div class="error" v-if="errores.error">
+    {{errores.message}}
+    </div>
 
     <img v-if="src.length > 0" class="img_1" :src="src" alt="No hay foto">
     <input type="button" @click="cargarFoto" value="Cargar Foto">
@@ -68,16 +73,22 @@
 //Librerias 
 import { getURL } from '@/firebase.cloud.storage';
 import { ref } from 'vue';
-import { useStorePerfil } from '@/store/perfil';
+import { useStorePerfil } from '@/store/perfil'; 
+
 
 //Arrancamos store
 const store = useStorePerfil();
-
-
+const errores = ref({error:false,message:''});
 
 //Cargar datos personales
 
-store.setDatosPersonales();
+store.setDatosPersonales()
+.catch(e=>{
+  errores.value={
+    error: true,
+    message: e.message
+  }
+});
 
 //Cargar datos curriculares
 store.setDatosCurricular();
