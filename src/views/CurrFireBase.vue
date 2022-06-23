@@ -1,29 +1,19 @@
 <template>
   <div class="contain-fb">
     <div class="header">
-      
-    
-      <div>
-        foto
-      </div>
+      <div>foto</div>
       <div class="about">
         <h1>Datos Personales</h1>
         <div class="campo">
-          <strong>
-            Nombre:
-          </strong>
+          <strong> Nombre: </strong>
           {{ store.getNombreCompleto }}
         </div>
-        <br>
+        <br />
         <div class="campo">
-          <strong>
-            Fecha de Nacimiento:
-          </strong>
+          <strong> Fecha de Nacimiento: </strong>
           {{ store.getDiaMesAnho }}
         </div>
-
       </div>
-
     </div>
 
     <div class="cfb-main">
@@ -35,17 +25,20 @@
               {{ valor.nombre }} {{ valor.periodo }}
             </li>
           </ul>
-          <strong>
-          </strong>
+          <strong> </strong>
         </div>
       </div>
       <div class="cfbficha">
         <h1>Educación</h1>
+        {{ store.instituciones.inst }}
         <ul>
           <li v-for="(valor, index) in store.instituciones" :key="index">
-            <span>{{ valor.nombre }}</span>
-            <span>{{ valor.periodo }}</span>
-          </li>
+            {{ valor.nombre }} <br>
+            {{ valor.estudios }} <br>
+            {{ valor.ciudad }} <br>
+            {{ valor.pais }} <br>
+            {{ valor.periodo }} <br>
+          </li> 
         </ul>
       </div>
       <div class="cfb-ficha">
@@ -58,36 +51,35 @@
       </div>
     </div>
     <div class="error" v-if="errores.error">
-    {{errores.message}}
+      {{ errores.message }}
     </div>
 
-    <img v-if="src.length > 0" class="img_1" :src="src" alt="No hay foto">
-    <input type="button" @click="cargarFoto" value="Cargar Foto">
+    <img v-if="src.length > 0" class="img_1" :src="src" alt="No hay foto" />
+    <input type="button" @click="cargarFoto" value="Cargar Foto" />
   </div>
-
-
-
 </template>
 
 <script setup>
-//Librerias 
-import { getURL } from '@/firebase.cloud.storage';
-import { ref } from 'vue';
-import { useStorePerfil } from '@/store/perfil'; 
+//Librerias
 
+// 1.- Libreria para cargar el Storage
+import { getURL } from "@/firebase.cloud.storage";
+
+//2.- Libreria para cargar datos en el curriculum
+import { useStorePerfil } from "@/store/perfil";
+import { ref } from "vue";
 
 //Arrancamos store
 const store = useStorePerfil();
-const errores = ref({error:false,message:''});
+const errores = ref({ error: false, message: "" });
 
 //Cargar datos personales
 
-store.setDatosPersonales()
-.catch(e=>{
-  errores.value={
+store.setDatosPersonales().catch((e) => {
+  errores.value = {
     error: true,
-    message: e.message
-  }
+    message: e.message,
+  };
 });
 
 //Cargar datos curriculares
@@ -97,44 +89,9 @@ store.setDatosCurricular();
 const src = ref("");
 
 const cargarFoto = async () => {
-  src.value = await getURL('big-data.jpg');
-}
+  src.value = await getURL("big-data.jpg");
+};
 
 //Cargar SCSS
-require("@/assets/scss/Views.scss")
-
-
-
+require("@/assets/scss/Views.scss");
 </script>
-
-<style scoped >
-.contain-fb {
-  margin: 20px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  text-align: inherit;
-  list-style: none;
-
-}
-
-.img-1 {
-  object-fit: cover;
-  width: 300px;
-
-}
-
-.cfb-main{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-/* .cfb-ficha{
-  display: flex;
-} */
-</style>
